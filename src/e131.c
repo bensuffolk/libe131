@@ -122,7 +122,7 @@ int e131_dest_str(char *str, const e131_addr_t *dest) {
 
 /* Configure a socket file descriptor to use a specific network interface for outgoing multicast data */
 int e131_multicast_iface(int sockfd, const int ifindex) {
-#ifdef _WIN32
+#if defined(_WIN32) || defined(ESP_PLATFORM)
   if (ifindex != 0) {
     errno = ENOSYS;
     return -1;
@@ -148,7 +148,7 @@ int e131_multicast_join_iface(int sockfd, const uint16_t universe, const int ifi
     errno = EINVAL;
     return -1;
   }
-#ifdef _WIN32
+#if defined(_WIN32) || defined(ESP_PLATFORM)
   if (ifindex != 0) {
     errno = ENOSYS;
     return -1;
@@ -171,7 +171,7 @@ extern int e131_multicast_join_ifaddr(int sockfd, const uint16_t universe, const
     errno = EINVAL;
     return -1;
   }
-#ifdef _WIN32
+#if defined(_WIN32) || defined(ESP_PLATFORM)
   struct ip_mreq mreq;
   mreq.imr_multiaddr.s_addr = htonl(0xefff0000 | universe);
   mreq.imr_interface.s_addr = inet_addr(ifaddr);

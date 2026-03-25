@@ -1,0 +1,23 @@
+{
+  "name": "libe131",
+  "version": "1.4.0",
+  "description": "This is a lightweight C/C++ library that provides a simple API for packet, client and server programming to be used for communicating with devices implementing the E1.31 (sACN) protocol.",
+  "keywords": "esp32, espressif32, DMX, DMX512, DMX512-A, lighting, theater, theatre, sACN, E1.31",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/hhromic/libe131"
+  },
+  "authors":
+  [
+    {
+      "name": "Hugo Hromic",
+      "email": "",
+      "maintainer": true
+    }
+  ],
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/hhromic/libe131",
+  "frameworks": "espidf",
+  "platforms": "espressif32"
+}
